@@ -17,10 +17,11 @@ function finalfreq() {
   console.log('array', stringsArray);
   console.log('total steps', stringsArray.length);
 
-
   var intArray = []
   var total = 0;
   var integer = 0;
+  var integer2 = 0;
+
   //loop through frequencies
   for(i = 0; i < stringsArray.length; i++){
     intArray.push(stringsArray[i])
@@ -31,8 +32,28 @@ function finalfreq() {
     total += integer
   }
 
+  var j = 1;
+  var i = 0;
+  var total2 = 0;
+  var firstfreq = stringsArray[0];
+  var newArray = [0];
+  do{
+    integer2 = Number(stringsArray[i]);
+    total2 += integer2
+    newArray[j] = total2
+    i++
+    if(i = (stringsArray.length-1)){
+      i = 0
+    }
+    j++
+    console.log('testing', newArray)
+  }while(!newArray.includes(total2))
+
+
   console.timeEnd('executiontime');
   console.log('total', total);
+  console.log('firstfreq', firstfreq);
+  
 })
 
 }
